@@ -3,3 +3,14 @@
 ################################################################################
 
 /C++ for Everyone, 2nd Ed, Horstmann/Chapter_01_Introduction/Debug
+/C++ for Everyone, 2nd Ed, Horstmann/Chapter_01_Introduction/Chapter_01_Introduction.VC.VC.opendb
+/C++ for Everyone, 2nd Ed, Horstmann/Chapter_01_Introduction/Chapter_01_Introduction.VC.db
+/C++ for Everyone, 2nd Ed, Horstmann/Chapter_01_Introduction/01_HelloWorld/01_HelloWorld.vcxproj.filters
+*.vcxproj
+*.pdb
+*.idb
+*.obj
+*.log
+*.tlog
+*.suo
+*.sln
