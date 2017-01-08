@@ -1,0 +1,5 @@
+﻿1>------ Build started: Project: P1_3, Configuration: Debug Win32 ------
+1>  P1_3.cpp
+1>  P1_3.vcxproj -> D:\C++\SOLUTIONS\Books' solutions\C++ for Everyone, 2nd Ed, Horstmann\Chapter_01_Introduction\Debug\P1_3.exe
+1>  P1_3.vcxproj -> D:\C++\SOLUTIONS\Books' solutions\C++ for Everyone, 2nd Ed, Horstmann\Chapter_01_Introduction\Debug\P1_3.pdb (Full PDB)
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
