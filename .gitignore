@@ -15,3 +15,7 @@
 *.suo
 *.sln
 *.filters
+*.ilk
+*.exe
+*.db
+*.opendb
