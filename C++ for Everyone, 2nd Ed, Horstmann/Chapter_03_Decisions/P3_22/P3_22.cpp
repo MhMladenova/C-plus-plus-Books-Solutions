@@ -11,5 +11,26 @@ using namespace std;
 
 int main()
 {
+	cout << "Enter a single character from the alphabet: ";
+	string ch;
+	cin >> ch;
+
+	if (ch.length() != 1 || !((ch <= "z" && ch >= "a") || (ch <= "Z" && ch >= "A")))
+	{
+		cout << "Input must bes a single character from the alphabet!" << endl;
+	}
+	else
+	{
+		if (ch == "a" || ch == "A" || ch == "e" || ch == "E"
+			|| ch == "i" || ch == "I" || ch == "o" || ch == "O"
+			|| ch == "u" || ch == "U")
+		{
+			cout << ch << " is a Vowel" << endl;
+		}
+		else
+		{
+			cout << ch << " is a Consonant" << endl;
+		}
+	}
 	return 0;
 }
