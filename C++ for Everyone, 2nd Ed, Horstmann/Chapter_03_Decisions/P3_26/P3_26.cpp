@@ -6,3 +6,37 @@
 	October 15, 1582 (1500 was a leap year). Write a program that asks the user for a year
 	and computes whether that year is a leap year
 */
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	cout << "Enter a year: ";
+	int year;
+	cin >> year;
+
+	if (year % 4 == 0)
+	{
+		if (year % 100 == 0)
+		{
+			if (year % 400 == 0)
+			{
+				cout << "Leap year." << endl;
+				return 0;
+			}
+			cout << "Not leap year." << endl;
+		}
+		else
+		{
+			cout << "Leap year." << endl;
+		}
+	}
+	else
+	{
+		cout << "Not leap year." << endl;
+	}
+
+	return 0;
+}
