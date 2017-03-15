@@ -17,5 +17,6 @@
 *.filters
 *.ilk
 *.exe
+*.o
 *.db
 *.opendb
