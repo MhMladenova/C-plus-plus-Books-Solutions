@@ -3,6 +3,24 @@
 #include <sstream>
 using namespace std;
 
+string* expandClipboardArr(string* currentClipboard, int numWords, int& currentClipboardSize)
+{
+    int newSize = numWords + currentClipboardSize;
+    string* clipboard = new string[newSize];
+
+    for (int i = 0; i < currentClipboardSize; i++)
+    {
+        clipboard[i] = currentClipboard[i];
+    }
+
+    if (currentClipboard != NULL)
+    {
+        delete[] currentClipboard;
+    }
+
+    return clipboard;
+}
+
 string* copyToClipboard(const string& text, int firstIndex, int lastIndex,
                         string* currentClipboard, int& currentClipboardSize)
 {
@@ -28,27 +46,17 @@ string* copyToClipboard(const string& text, int firstIndex, int lastIndex,
     }
 
     stringstream readStream(copied);
-    int newSize = numWords + currentClipboardSize;
-    string* clipboard = new string[newSize];
 
-    for (int i = 0; i < currentClipboardSize; i++)
-    {
-        clipboard[i] = currentClipboard[i];
-    }
-
-    if (currentClipboard != NULL)
-    {
-        delete[] currentClipboard;
-    }
+    string* clipboard = expandClipboardArr(currentClipboard, numWords, currentClipboardSize);
 
     int index = currentClipboardSize;
-    while(copiedStream >> word)
+    while(readStream >> word)
     {
         clipboard[index] = word;
         index++;
     }
 
-    currentClipboardSize = newSize;
+    currentClipboardSize = numWords + currentClipboardSize;;
     return clipboard;
 }
 
