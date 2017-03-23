@@ -24,6 +24,8 @@ Draw the bars vertically, below the last row of numbers.
 
 using namespace std;
 
+//Galton board
+
 int main()
 {
     srand(time(0));
