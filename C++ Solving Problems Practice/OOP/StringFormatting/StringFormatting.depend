@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1490813468 source:d:\c++\solutions\books' solutions\c++ solving problems practice\oop\stringformatting\main.cpp
+	<iostream>
+	<string>
+
