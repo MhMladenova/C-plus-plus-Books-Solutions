@@ -20,3 +20,6 @@
 *.o
 *.db
 *.opendb
+*.cbp
+*.layout
+*.depend
