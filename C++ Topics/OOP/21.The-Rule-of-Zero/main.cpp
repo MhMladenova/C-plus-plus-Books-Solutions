@@ -1,25 +1,26 @@
 #include<iostream>
 #include<sstream>
+#include<vector>
 #include "SmartArray.h"
+
 using std::string;
+using std::vector;
 
 class PrimeCalculator
 {
-    int numPrimes;
-    int * primes;
+    vector<int> primes;
 
 public:
-    PrimeCalculator(int primesToCalculate) :
-        numPrimes(primesToCalculate),
-        primes(new int[primesToCalculate])
+    PrimeCalculator(int primesToCalculate)
     {
-        if (this->numPrimes > 0)
+        if (primesToCalculate > 0)
         {
-            primes[0] = 1;
+            primes.push_back(1);
 
             int primeIndex = 1;
             int currentNumber = primes[primeIndex - 1] + 1;
-            while(primeIndex < this->numPrimes) {
+            while(primeIndex < primesToCalculate)
+            {
                 bool isPrime = true;
 
                 // NOTE: a more efficient method will only check against the primes calculated so far, not against all numbers
@@ -34,7 +35,7 @@ public:
 
                 if (isPrime)
                 {
-                    primes[primeIndex] = currentNumber;
+                    primes.push_back(currentNumber);
                     primeIndex++;
                 }
 
@@ -50,7 +51,7 @@ public:
 
     int getLast()
     {
-        return getPrime(this->numPrimes - 1);
+        return getPrime(this->primes.size() - 1);
     }
 
     string toString()
@@ -58,47 +59,12 @@ public:
         using std::ostringstream;
 
         ostringstream stream;
-        for (int i = 0; i < this->numPrimes; i++)
+        for (int i = 0; i < this->primes.size(); i++)
         {
             stream << this->primes[i] << " ";
         }
 
         return stream.str();
-    }
-
-    //Rule of Three:
-    ~PrimeCalculator()
-    {
-        delete[] this->primes;
-    }
-
-    PrimeCalculator(const PrimeCalculator& other) :
-        numPrimes(other.numPrimes),
-        primes(new int[other.numPrimes])
-    {
-
-        this->primes = new int[this->numPrimes];
-        for (int i = 0; i < this->numPrimes; i++)
-        {
-            this->primes[i] = other.primes[i];
-        }
-    }
-
-    PrimeCalculator& operator=(const PrimeCalculator& other)
-    {
-        if(this != &other)
-        {
-            delete[] this->primes;
-
-            this->numPrimes = other.numPrimes;
-            this->primes = new int[this->numPrimes];
-            for (int i = 0; i < this->numPrimes; i++)
-            {
-                this->primes[i] = other.primes[i];
-            }
-        }
-
-        return *this;
     }
 };
 

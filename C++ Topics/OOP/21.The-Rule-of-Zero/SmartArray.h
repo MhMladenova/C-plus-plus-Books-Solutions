@@ -10,6 +10,7 @@ class SmartArray
 private:
     int length;
 	DataType * data;
+
 public:
 	SmartArray();
 	SmartArray(const SmartArray & other);
