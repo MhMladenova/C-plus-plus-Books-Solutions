@@ -3,7 +3,8 @@
 
 #include "Organisms.h"
 
-class OrganismWriter {
+class OrganismWriter
+{
 public:
     virtual void write(Organisms::Organism &o) = 0;
 };
